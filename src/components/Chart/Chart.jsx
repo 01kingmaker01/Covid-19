@@ -91,13 +91,15 @@ const Chart = ({
         ],
       }}
       options={{
-        legend: { display: false },
-        title: {
-          display: false,
-          // text: ` Covid-19 Condition in ${country} on ${new Date(
-          // date
-          // ).toDateString()}.`,
+        barDatasetSpacing: 1,
+        barValueSpacing: 1,
+        scales: {
+          ticks: {
+            beginAtZero: true,
+          },
+          xAxes: [{ barPercentage: 0.5 }],
         },
+        legend: { display: false },
       }}
     />
   ) : null;
