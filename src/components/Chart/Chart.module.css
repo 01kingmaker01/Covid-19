@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  flex-direction: column;
+}
+
+.card {
+  text-align: center;
+  margin: 10px 10%;
+}
+
+.chartWrapper {
+  padding: 40px 10px !important;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+h6 {
+  padding-top: 40px !important;
+}
+
+.blue {
+  color: rgba(0, 0, 255, 0.5);
+  font-weight: 600 !important;
+}
+.red {
+  color: rgba(255, 0, 0, 0.5);
+  font-weight: 600 !important;
+}
+
+h4 {
+  margin: 75px auto;
+}
+h3 > span {
+  color: red;
+}
+/* .chartAreaWrapper,
+.chartWrapper > canvas,
+.chartWrapper {
+  /* width: 100%;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto !important; */
+/* } */
+@media (max-width: 770px) {
+  .container {
+    width: 100%;
+  }
+  .chartWrapper {
+    position: relative;
+    overflow-y: scroll;
+    padding: 10px;
+  }
+
+  .chartWrapper > canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    cursor: pointer !important;
+    /* margin: 10px; */
+    pointer-events: none;
+  }
+
+  .chartAreaWrapper {
+    width: 1000px;
+  }
+}
