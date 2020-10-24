@@ -41,33 +41,63 @@ const Chart = ({
 
   const lineChart = dailyData.length ? (
     <Line
+      options={{
+        barDatasetSpacing: 1,
+        barValueSpacing: 1,
+        scales: {
+          yAxes: [
+            {
+              gridLines: {
+                color: '#aaaaaa',
+              },
+              ticks: {
+                fontColor: 'white',
+              },
+            },
+          ],
+          xAxes: [
+            {
+              gridLines: {
+                color: '#aaaaaa',
+              },
+              ticks: {
+                fontColor: 'white',
+              },
+            },
+          ],
+        },
+      }}
       data={{
         labels: dailyDataUpdated.map(({ last_update }) =>
           new Date(last_update).toDateString()
         ),
+
         datasets: [
+          {
+            data: dailyDataUpdated.map(({ total_deaths }) => total_deaths),
+            label: 'Deaths',
+            borderColor: 'darkred',
+            backgroundColor: 'rgb(255, 0, 0)',
+            fill: true,
+          },
           {
             data: dailyDataUpdated.map(
               ({ total_recovered }) => total_recovered
             ),
             label: 'Recovered',
-            borderColor: 'green',
-            backgroundColor: ' rgba(0, 255, 0, 0.3)',
+            borderColor: 'darkgreen',
+            backgroundColor: ' rgb(0, 255, 0)',
 
             fill: true,
           },
-          {
-            data: dailyDataUpdated.map(({ total_deaths }) => total_deaths),
-            label: 'Deaths',
-            borderColor: 'red',
-            backgroundColor: ' rgb(255, 0, 0)',
-            fill: true,
-          },
+
           {
             data: dailyDataUpdated.map(({ total_cases }) => total_cases),
             label: 'Infected',
-            borderColor: '#3333ff',
-            fill: false,
+            borderColor: '#2222b4',
+
+            backgroundColor: '#3333ff',
+            fill: true,
           },
         ],
       }}
@@ -82,11 +112,12 @@ const Chart = ({
           {
             label: 'People',
             backgroundColor: [
-              'rgba(0, 0, 255, 0.5)',
-              'rgba(0,255, 0,  0.5)',
-              'rgba(255,0, 0, 0.5)',
+              'rgb(0, 0, 255)',
+              'rgb(0, 255, 0)',
+              'rgb(255, 0, 0)',
             ],
             data: [total_cases, total_recovered, total_deaths],
+            barPercentage: 0.4,
           },
         ],
       }}
@@ -94,11 +125,31 @@ const Chart = ({
         barDatasetSpacing: 1,
         barValueSpacing: 1,
         scales: {
-          ticks: {
-            beginAtZero: true,
-          },
-          xAxes: [{ barPercentage: 0.5 }],
+          yAxes: [
+            {
+              gridLines: {
+                color: '#aaaaaa',
+              },
+              ticks: {
+                beginAtZero: true,
+                fontColor: 'white',
+              },
+            },
+          ],
+
+          xAxes: [
+            {
+              gridLines: {
+                color: '#aaaaaa',
+              },
+              ticks: {
+                padding: 10,
+                fontColor: 'white',
+              },
+            },
+          ],
         },
+
         legend: { display: false },
       }}
     />

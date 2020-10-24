@@ -11,8 +11,10 @@
 }
 
 .chartWrapper {
+  /* background: #ffffff; */
+
   padding: 40px 10px !important;
-  border: 2px solid black;
+  border: 2px solid white;
   border-radius: 0.5rem;
   text-align: center;
 }
@@ -22,11 +24,11 @@ h6 {
 }
 
 .blue {
-  color: rgba(0, 0, 255, 0.5);
+  color: rgb(70, 70, 255);
   font-weight: 600 !important;
 }
 .red {
-  color: rgba(255, 0, 0, 0.5);
+  color: rgb(255, 70, 70);
   font-weight: 600 !important;
 }
 
@@ -36,6 +38,11 @@ h4 {
 h3 > span {
   color: red;
 }
+
+.chartWrapper > canvas {
+  color: #ffffff;
+}
+
 /* .chartAreaWrapper,
 .chartWrapper > canvas,
 .chartWrapper {

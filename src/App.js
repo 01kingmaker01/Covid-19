@@ -5,7 +5,7 @@ import styles from './App.module.css';
 import { fetchData } from './api';
 // import Loader from './Loader';
 import { DotLoader } from 'react-spinners';
-import covid from './image.png';
+import covid from './CovidLogo.svg';
 import SweetAlert from 'react-bootstrap-sweetalert';
 
 export default class App extends Component {
@@ -63,7 +63,23 @@ export default class App extends Component {
             <SweetAlert
               // btnSize='lg'
               // confirmBtnText='  OK!  '
-              confirmBtnStyle={{ padding: '15px 30px', fontSize: '15px' }}
+              style={{
+                background: '#212121',
+                fontSize: '15px',
+                margin: '10%',
+                fontWeight: '100 !important',
+              }}
+              type='info'
+              confirmBtnStyle={{
+                textDecoration: 'none',
+                padding: '15px 30px',
+                fontSize: '15px',
+                color: 'white',
+                borderRadius: '.5rem',
+                border: '2px solid #ffffff',
+                outline: 'none',
+                boxShadow: 'none',
+              }}
               title='Try Clicking on Infected, Deaths, Recovered button on Graph'
               onConfirm={() => {
                 this.setState({ alert: false });

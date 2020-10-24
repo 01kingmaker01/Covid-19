@@ -5,27 +5,32 @@
   margin: 1.5% 3.5% !important;
 }
 
+.root {
+  box-shadow: 0px 3px 5px -1px rgb(255, 255, 255),
+    0px 5px 8px 0px rgb(255, 255, 255), 0px 1px 14px 0px rgb(255, 255, 255);
+}
+
 .green {
-  color: rgba(0, 255, 0, 0.5);
+  color: rgb(65, 255, 65);
   /* font-weight: 600 !important; */
 }
 .blue {
-  color: rgba(0, 0, 255, 0.5);
+  color: rgb(65, 65, 255);
   /* font-weight: 600 !important; */
 }
 .red {
-  color: rgba(255, 0, 0, 0.5);
+  color: rgb(255, 65, 65);
   /* font-weight: 600 !important; */
 }
 
 .infected {
-  border-bottom: 10px solid rgba(0, 0, 255, 0.5);
+  border-bottom: 10px solid rgba(65, 65, 255);
 }
 .recovered {
-  border-bottom: 10px solid rgba(0, 255, 0, 0.5);
+  border-bottom: 10px solid rgba(65, 255, 65);
 }
 .deaths {
-  border-bottom: 10px solid rgba(255, 0, 0, 0.5);
+  border-bottom: 10px solid rgba(255, 65, 65);
 }
 .Chart {
   cursor: pointer;

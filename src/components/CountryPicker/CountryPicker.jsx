@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { NativeSelect, FormControl } from '@material-ui/core';
 import styles from './CountryPicker.module.css';
+
+// import { withStyles } from '@material-ui/core/styles';
 import { countriesName, fetchData } from '../../api';
 
 const CountryPicker = ({
@@ -44,10 +46,39 @@ const CountryPicker = ({
         {modifiedDate(new Date(last_update).toDateString())}
       </option>
     ));
+  // const MyFormControl = withStyles({
+  //   root: {
+  //     // background:'linear-gradient(45deg, #ff4747 30%, #FF8E53 90%)',
+  //     borderRadius: 10,
+  //     border: 'none',
+  //     color: 'white',
+  //     height: 48,
+  //     // padding: '0 30px',
+  //     boxShadow: '0 3px 5px 2px white',
+  //   },
+  //   // icon: {
+  //   //   color: 'white',
+  //   // },
+  // })(FormControl);
+  // const MySelect = withStyles({
+  //   root: {
+  //     borderBottom: 'none',
+  //     // background: 'linear-gradient(45deg, #ff4747 30%, #FF8E53 90%)',
+  //     // borderRadius: 10,
+  //     // border: 'none',
+  //     color: 'white',
+  //     // height: 48,
+  //     // padding: '0 30px',
+  //     // boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+  //   },
+  //   icon: {
+  //     color: 'white',
+  //   },
+  // })(Select);
 
   return (
     <div>
-      <FormControl variant='filled' className={styles.formControl}>
+      <FormControl variant='outlined' className={styles.formControl}>
         <NativeSelect
           className={styles.select}
           value={country}
@@ -59,7 +90,7 @@ const CountryPicker = ({
           {countries}
         </NativeSelect>
       </FormControl>
-      <FormControl className={styles.formControl}>
+      <FormControl variant='outlined' className={styles.formControl}>
         <NativeSelect
           className={styles.select}
           value={dateSelected}
